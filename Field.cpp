@@ -51,11 +51,20 @@ FieldType Field::get(int x, int y)
  bool Field::isSafe(int x, int y)
  {
  	//TODO: Complete this function, isSafe(int,int)
- 	return true;
+ 	bool ret = get(x,y);
+
+    //check for the state of the location and invalid locations
+ 	if(ret==MINE_SHOWN || EMPTY_SHOWN){
+
+ 	throw "Out of bounds";
+
+ 	}
+ 	else
+ 	return ret;//if location is valid and it has mine or empty returns state
  }
 
 /**
- * Changes the location from EMPTY_HIDDEN to EMPTY_SHOWN for the 
+ * Changes the location from EMPTY_HIDDEN to EMPTY_SHOWN for the
  * location and any valid locations adjacent (immediately above,
  * below, left, or right as printed) to the provided (x,y) location
 **/
